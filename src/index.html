@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery plugin for dynamically switching Disqus identifier and relocating UI to a selected region</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+
+<div id="disqusTarget" style="width: 100%;padding:10px;overflow-y:auto;overflow-x: hidden;">
+    <p id="testing01" class="disqusContentItem">The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.</p>
+    <p id="testing02" class="disqusContentItem">Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.</p>
+</div>
+
+
+<div class="landingPage">
+    <!--Keep wrapper -- needed to identify Disqus module to plugin-->
+    <div class="disqusWrapper">
+        <!--Keep thread -- needed to write Disqus UI-->
+        <div id="disqus_thread"></div>
+    </div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="js/DisqusElements.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        var defaults = {
+            showOnLanding:true,
+            setURL:'https://disqus.com/api/3.0/threads/set.json',
+            publicKey:'G5MpkgrPdcrTZveRMsRB3BXaFLS56DEqGQJcsD58XutARQnE0qnHLKqaHoDtZJCR',
+            shortname:'mikebritton',
+            title:'Test Title: testing00',
+            identifier:'testing00',
+            baseurl:'http://www.mikebritton.com/projects/disqusbuddy/src',
+            url:'http://www.mikebritton.com/projects/disqusbuddy/src/#!testing00'
+        };
+
+        $('#disqusTarget').disqusElements(defaults);
+    });
+</script>
+
+
+
+</body>
+</html>

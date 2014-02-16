@@ -1,0 +1,21 @@
+{
+  "name": "DisqusElements",
+  "version": "0.0.0",
+  "description": "jQuery plugin for dynamically switching Disqus identifier and relocating UI to a selected region where <p> tags frame each Disqus discussion.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "keywords": [
+    "jQuery",
+    "plugins",
+    "javascript",
+    "Disqus"
+  ],
+  "author": "Mike Britton",
+  "license": "BSD",
+  "devDependencies": {
+    "grunt": "~0.4.2"
+  }
+}
