@@ -1,6 +1,6 @@
 ## DisqusElements
 
-This jQuery plugin extends Disqus functionality by wrapping an element and creating a user interface for multiple discussion threads.
+This jQuery plugin extends Disqus http://disqus.com/ functionality by wrapping an element and creating a user interface for multiple discussion threads.
 
 ## Code Example
 
