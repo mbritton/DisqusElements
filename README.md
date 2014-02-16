@@ -20,4 +20,4 @@ Follow @mbritton on Twitter: https://twitter.com/mbritton
 
 ## License
 
-A short snippet describing the license (MIT, Apache, etc.)
+BSD
