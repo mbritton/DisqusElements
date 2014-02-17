@@ -54,10 +54,8 @@
          * and establish event handlers for them.
          */
         createThreadButtons: function () {
-            console.log('createThreadButtons');
             var ctr = 0, scopeTarget = this;
             var tmp = $(this.element).find('p');
-            console.dir(tmp);
             $(this.element).find('p').each(function () {
                 var closeButton = '<div id="closeButton_'+$(this).attr('id')+'" class="closeButton">Close</div>';
                 var commentButton = '<div id="' + $(this).attr('id') + '" class="sectionCommentButton">' + closeButton + '<br clear="all"/></div>';
@@ -134,7 +132,8 @@
                             $('#'+elemID+' .sectionCommentButton').prepend(nc);
                         }
                     } else {
-                        $('#'+elemID+' .sectionCommentButton').prepend(0);
+                        var nc = '<div id="numComments_'+elemID+'" class="numComments">0</div>';
+                        $('#'+elemID+' .sectionCommentButton').prepend(nc);
                     }
                 }
             });
