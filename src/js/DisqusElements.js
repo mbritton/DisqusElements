@@ -20,6 +20,7 @@
          * discussion.
          */
         init: function () {
+            console.log('INIT');
             var scopeTarget = this;
             var dsq = document.createElement('script');
             dsq.type = 'text/javascript';
@@ -53,7 +54,10 @@
          * and establish event handlers for them.
          */
         createThreadButtons: function () {
+            console.log('createThreadButtons');
             var ctr = 0, scopeTarget = this;
+            var tmp = $(this.element).find('p');
+            console.dir(tmp);
             $(this.element).find('p').each(function () {
                 var closeButton = '<div id="closeButton_'+$(this).attr('id')+'" class="closeButton">Close</div>';
                 var commentButton = '<div id="' + $(this).attr('id') + '" class="sectionCommentButton">' + closeButton + '<br clear="all"/></div>';
@@ -122,11 +126,15 @@
                 cache: false,
                 dataType: 'jsonp',
                 success: function (result) {
-                    for (var i in result.response) {
-                        var countText = " comments";
-                        var count = result.response[i].posts;
-                        var nc = '<div id="numComments_'+elemID+'" class="numComments">'+result.response[i].posts+'</div>';
-                        $('#'+elemID+' .sectionCommentButton').prepend(nc);
+                    if (result.response && result.response != '') {
+                        for (var i in result.response) {
+                            var countText = " comments";
+                            var count = result.response[i].posts;
+                            var nc = '<div id="numComments_'+elemID+'" class="numComments">'+result.response[i].posts+'</div>';
+                            $('#'+elemID+' .sectionCommentButton').prepend(nc);
+                        }
+                    } else {
+                        $('#'+elemID+' .sectionCommentButton').prepend(0);
                     }
                 }
             });
